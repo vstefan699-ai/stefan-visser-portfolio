@@ -1,0 +1,12 @@
+# Windows / OneDrive junk files
+Thumbs.db
+desktop.ini
+
+# macOS junk (in case you ever open it on a Mac)
+.DS_Store
+
+# Editor settings
+.vscode/
+
+# Vercel CLI folder (created if you ever use the Vercel CLI)
+.vercel
