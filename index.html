@@ -4,89 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stefan Visser | Junior Full-Stack Developer</title>
-  <meta name="description" content="Portfolio of Stefan Visser, junior full-stack developer working with the MERN stack and Django.">
+  <meta name="description" content="Portfolio of Stefan Visser, junior full-stack developer building practical web apps with React, Node.js, Firebase and Django.">
 
-  <!-- Temporary inline styles: this whole file gets replaced when we build the real homepage -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Favicon: a lightning bolt, a nod to the auto electrician days -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+  <!-- Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    .card {
-      max-width: 32rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      margin-bottom: 0.5rem;
-      color: #ffffff;
-    }
-
-    .role {
-      color: #38bdf8;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    .intro {
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      color: #94a3b8;
-    }
-
-    .links {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .links a {
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      background: #38bdf8;
-      color: #0f172a;
-      border: 2px solid #38bdf8;
-    }
-
-    .links a.secondary {
-      background: transparent;
-      color: #38bdf8;
-    }
-
-    .links a:hover {
-      opacity: 0.85;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <main class="card">
-    <h1>Stefan Visser</h1>
-    <p class="role">Junior Full-Stack Developer · MERN · Django</p>
-    <p class="intro">
-      My full portfolio is on its way. In the meantime, have a look at my code
-      on GitHub or drop me an email.
-    </p>
-    <div class="links">
-      <a href="https://github.com/vstefan699-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="secondary" href="mailto:vstefan699@gmail.com">Email me</a>
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ========== HEADER (same on every page) ========== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="index.html">Stefan Visser<span>.</span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== PAGE CONTENT ========== -->
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Hi, I'm Stefan.<br><span class="text-accent">I build full-stack web apps.</span></h1>
+        <p>
+          Former auto electrician turned junior developer. I build practical apps with
+          React, Node.js, Firebase and Django, including one that a real mechanic's
+          workshop uses to track its jobs.
+        </p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="projects.html">View my projects</a>
+          <a class="btn btn-outline" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- ========== FOOTER (same on every page) ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Stefan Visser · Kuruman, South Africa</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/vstefan699-ai" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:vstefan699@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
