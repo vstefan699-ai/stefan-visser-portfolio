@@ -11,8 +11,9 @@
    8.  Hero & page headers
    9.  Home page sections
    10. Projects
-   11. Footer
-   12. Accessibility helpers
+   11. About page
+   12. Footer
+   13. Accessibility helpers
    ========================================================= */
 
 
@@ -706,7 +707,7 @@ p {
   margin-top: var(--space-md);
 }
 
-/* Centred call-to-action blocks: "More class projects" + Home's closing section */
+/* Centred call-to-action blocks: "More class projects" + closing sections on Home and About */
 .more-projects,
 .cta {
   text-align: center;
@@ -736,7 +737,129 @@ p {
 }
 
 
-/* ---------- 11. FOOTER ---------- */
+/* ---------- 11. ABOUT PAGE ---------- */
+/* Story on the left, quick-facts card on the right */
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.about-story p + p {
+  margin-top: var(--space-sm);
+}
+
+/* Quick-facts card: stays in view while you read the story */
+.facts-card {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-md));
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.facts-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.facts-card dl div {
+  padding-block: var(--space-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.facts-card dl div:last-child {
+  border-bottom: none;
+}
+
+.facts-card dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.facts-card dd {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* Timeline: a vertical line with a dot for each item */
+.timeline {
+  position: relative;
+  max-width: 44rem;
+  list-style: none;
+  padding-left: var(--space-lg);
+}
+
+/* The vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.6rem;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item + .timeline-item {
+  margin-top: var(--space-lg);
+}
+
+/* The dot on the line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: calc(-1 * var(--space-lg) + 0.25rem);
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.timeline-item h3 {
+  margin-top: 0.15rem;
+}
+
+.timeline-place {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.timeline-place + p {
+  margin-top: var(--space-xs);
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* No sticky card on phones: it would cover the text */
+  .facts-card {
+    position: static;
+  }
+}
+
+
+/* ---------- 12. FOOTER ---------- */
 .site-footer {
   padding-block: var(--space-lg);
   background: var(--color-bg-alt);
@@ -762,7 +885,7 @@ p {
 }
 
 
-/* ---------- 12. ACCESSIBILITY HELPERS ---------- */
+/* ---------- 13. ACCESSIBILITY HELPERS ---------- */
 /* Hidden "Skip to content" link that appears when keyboard users press Tab */
 .skip-link {
   position: absolute;
