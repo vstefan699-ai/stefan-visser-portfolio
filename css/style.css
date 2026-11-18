@@ -280,6 +280,21 @@ p {
   border-bottom-color: var(--color-accent);
 }
 
+/* "View CV" link: an outlined pill so it stands out from the page links */
+.nav-links a.nav-cv {
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.nav-links a.nav-cv:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-bottom-color: var(--color-accent);
+}
+
 /* Hamburger button: hidden on desktop */
 .nav-toggle {
   display: none;
@@ -330,6 +345,14 @@ p {
 
   .nav-links a[aria-current="page"] {
     color: var(--color-accent);
+  }
+
+  /* In the phone menu the CV link sits on its own line, still outlined */
+  .nav-links a.nav-cv {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-accent);
   }
 
   /* Turn the three bars into an X when open */
@@ -791,10 +814,19 @@ p {
   font-size: 0.875rem; /* match the Home page pill, not the larger header paragraph */
 }
 
+/* Four cards: a tidy 2x2 grid on wider screens, one column on phones */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-card {
@@ -850,6 +882,19 @@ a.contact-card .contact-value {
 
 .about-story p + p {
   margin-top: var(--space-sm);
+}
+
+/* Certificate badges under the story */
+.certificates {
+  margin-top: var(--space-md);
+}
+
+.certificates h3 {
+  font-size: 1rem;
+}
+
+.certificates .tag-list {
+  margin-top: var(--space-xs);
 }
 
 /* Quick-facts card: stays in view while you read the story */
