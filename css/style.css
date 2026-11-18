@@ -11,9 +11,10 @@
    8.  Hero & page headers
    9.  Home page sections
    10. Projects
-   11. About page
-   12. Footer
-   13. Accessibility helpers
+   11. Contact page
+   12. About page
+   13. Footer
+   14. Accessibility helpers
    ========================================================= */
 
 
@@ -26,8 +27,8 @@
   --color-text: #0f172a;
   --color-text-muted: #475569;
   --color-border: #e2e8f0;
-  --color-accent: #0284c7;
-  --color-accent-hover: #0369a1;
+  --color-accent: #0369a1;       /* sky-700: passes WCAG AA contrast on white */
+  --color-accent-hover: #075985;
   --color-accent-contrast: #ffffff;
 
   /* Font */
@@ -110,6 +111,12 @@ a {
 
 a:hover {
   color: var(--color-accent-hover);
+}
+
+/* Links inside running text are underlined, so they don't rely on colour alone */
+p a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 
@@ -707,21 +714,56 @@ p {
   margin-top: var(--space-md);
 }
 
-/* Centred call-to-action blocks: "More class projects" + closing sections on Home and About */
-.more-projects,
+/* Centred call-to-action block: closing sections on Home and About */
 .cta {
   text-align: center;
 }
 
-.more-projects p,
 .cta p {
   max-width: 36rem;
   margin: 0 auto;
 }
 
-.more-projects .btn-group,
 .cta .btn-group {
   justify-content: center;
+}
+
+/* Tutorial-based project: one wide card, intro on the left, my additions on the right */
+.extension-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.extension-intro h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.extension-intro .btn-group {
+  margin-top: var(--space-md);
+}
+
+.extension-work h4 {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.extension-note {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Neutral badge, so the tutorial project doesn't look like an original one */
+.badge-muted {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 
 @media (max-width: 768px) {
@@ -734,10 +776,70 @@ p {
   .project-card:nth-child(even) .project-image {
     order: 0;
   }
+
+  .extension-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
 }
 
 
-/* ---------- 11. ABOUT PAGE ---------- */
+/* ---------- 11. CONTACT PAGE ---------- */
+.page-header .eyebrow {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.875rem; /* match the Home page pill, not the larger header paragraph */
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-md);
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+a.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.contact-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  overflow-wrap: anywhere; /* long email/URL never overflows on small phones */
+}
+
+a.contact-card .contact-value {
+  color: var(--color-accent);
+}
+
+.contact-hint {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ---------- 12. ABOUT PAGE ---------- */
 /* Story on the left, quick-facts card on the right */
 .about-grid {
   display: grid;
@@ -859,7 +961,7 @@ p {
 }
 
 
-/* ---------- 12. FOOTER ---------- */
+/* ---------- 13. FOOTER ---------- */
 .site-footer {
   padding-block: var(--space-lg);
   background: var(--color-bg-alt);
@@ -885,7 +987,7 @@ p {
 }
 
 
-/* ---------- 13. ACCESSIBILITY HELPERS ---------- */
+/* ---------- 14. ACCESSIBILITY HELPERS ---------- */
 /* Hidden "Skip to content" link that appears when keyboard users press Tab */
 .skip-link {
   position: absolute;
@@ -900,6 +1002,19 @@ p {
 
 .skip-link:focus {
   top: var(--space-sm);
+}
+
+/* Text for screen readers only (e.g. "opens in a new tab") */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Clear focus ring for keyboard users only */

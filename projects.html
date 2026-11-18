@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Stefan Visser</title>
-  <meta name="description" content="Projects by Stefan Visser: ShopLog, a React and Firebase workshop tracker in real-world use, and FitTrack Pro, a Django gym management app.">
+  <meta name="description" content="Projects by Stefan Visser: ShopLog, a React and Firebase vehicle service tracker in real use; FitTrack Pro, a Django gym management app; and a security-hardened Expense Tracker.">
+  <!-- Link previews (WhatsApp, LinkedIn, email, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stefan Visser">
+  <meta property="og:title" content="Projects | Stefan Visser">
+  <meta property="og:description" content="Projects by Stefan Visser: ShopLog, a React and Firebase vehicle service tracker in real use; FitTrack Pro, a Django gym management app; and a security-hardened Expense Tracker.">
+  <meta property="og:url" content="https://stefan-visser-portfolio.vercel.app/projects">
+  <meta property="og:image" content="https://stefan-visser-portfolio.vercel.app/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Stefan Visser, junior full-stack developer, with a screenshot of ShopLog">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://stefan-visser-portfolio.vercel.app/projects">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
@@ -43,47 +55,52 @@
     <section class="page-header">
       <div class="container">
         <h1>Projects</h1>
-        <p>Real apps solving real problems. Here are the two I'm most proud of.</p>
+        <p>
+          Two original full-stack apps I designed and built, plus a tutorial-based app that
+          I extended with my own security work.
+        </p>
       </div>
     </section>
 
-    <!-- Featured projects -->
-    <section class="section section-tight-top">
+    <!-- Original projects -->
+    <section class="section section-tight-top" aria-label="Original projects">
       <div class="container project-list">
 
         <!-- ===== Project 1: ShopLog ===== -->
         <article class="project-card">
           <a class="project-image" href="https://react-garage-tracker.vercel.app/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/shoplog.png" alt="Screenshot of ShopLog showing a workshop's vehicle list with number plates, owners, a search box and a selected vehicle" width="1280" height="800">
+            <img src="assets/images/shoplog.webp" alt="Screenshot of ShopLog showing a vehicle list with number plates, owners, a search box and a selected vehicle's service history" width="1600" height="1000">
           </a>
 
           <div class="project-info">
-            <span class="badge">In real-world use</span>
+            <span class="badge">Original project · In real use</span>
             <h2>ShopLog</h2>
             <p>
-              A vehicle service tracker I built for a friend's mechanic workshop, which
-              now uses it for real jobs. Mechanics log each vehicle and every service done
-              on it, with itemised costs that total automatically.
+              A vehicle and service tracker I built for an independent mechanic, who uses it
+              for his private mechanical work. He logs each vehicle and every service done on
+              it, with itemised parts and labour costs that total automatically.
             </p>
 
             <ul class="project-highlights">
-              <li>Instant search by number plate or owner name, so a customer's history is a few keystrokes away</li>
-              <li>Each user's data is private, enforced by Firestore security rules I tested in the Rules Playground</li>
-              <li>Installable PWA, so it runs from a phone's home screen like a native app</li>
+              <li>Add, edit and delete vehicles, with search and pagination</li>
+              <li>Service history for each vehicle, with itemised parts and labour costs and automatic totals</li>
+              <li>Firestore security rules so each user can only access their own data, with real-time updates</li>
+              <li>Installable Progressive Web App that runs from a phone's home screen</li>
             </ul>
 
             <ul class="tag-list" aria-label="Technologies used">
               <li>React</li>
               <li>Vite</li>
+              <li>JavaScript</li>
               <li>Firebase Auth</li>
               <li>Firestore</li>
+              <li>CSS</li>
               <li>PWA</li>
-              <li>Vercel</li>
             </ul>
 
             <div class="btn-group">
-              <a class="btn btn-primary" href="https://react-garage-tracker.vercel.app/" target="_blank" rel="noopener noreferrer">Live app</a>
-              <a class="btn btn-outline" href="https://github.com/vstefan699-ai/React_GarageTracker" target="_blank" rel="noopener noreferrer">View code</a>
+              <a class="btn btn-primary" href="https://react-garage-tracker.vercel.app/" target="_blank" rel="noopener noreferrer">Live app<span class="visually-hidden"> (ShopLog, opens in a new tab)</span></a>
+              <a class="btn btn-outline" href="https://github.com/vstefan699-ai/React_GarageTracker" target="_blank" rel="noopener noreferrer">View code<span class="visually-hidden"> (ShopLog on GitHub, opens in a new tab)</span></a>
             </div>
           </div>
         </article>
@@ -91,22 +108,23 @@
         <!-- ===== Project 2: FitTrack Pro ===== -->
         <article class="project-card">
           <a class="project-image" href="https://python-full-stack-django-project-9z.vercel.app/home/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/fittrack.png" alt="Screenshot of FitTrack Pro showing a client's dashboard and workout programme with sets and reps" width="1280" height="800" loading="lazy">
+            <img src="assets/images/fittrack.webp" alt="Screenshot of FitTrack Pro showing a member's dashboard and workout programme with sets and reps" width="1600" height="1000" loading="lazy">
           </a>
 
           <div class="project-info">
-            <span class="badge">Full-stack Django</span>
+            <span class="badge">Original project · Portfolio app</span>
             <h2>FitTrack Pro</h2>
             <p>
-              A gym management app for a personal trainer and their clients. The trainer
-              builds custom programmes from a shared exercise library, and clients log in
-              to follow their plan and record each workout.
+              A full-stack gym and personal-training management app. Trainers build workout
+              programmes from a shared exercise library and assign them to members, who log
+              their workouts and track their progress.
             </p>
 
             <ul class="project-highlights">
-              <li>Clients log sets, reps and workout dates, with a progress chart to track improvement</li>
-              <li>Separate trainer and member views, backed by Django's built-in auth forms</li>
-              <li>Automated Django tests, PostgreSQL on Neon, and demo accounts so you can try it</li>
+              <li>Separate trainer and member experiences, with authentication and role-based access</li>
+              <li>Exercise library, plus workout programme creation and assignment</li>
+              <li>Workout logging and history, with progress charts</li>
+              <li>Automated Django tests</li>
             </ul>
 
             <ul class="tag-list" aria-label="Technologies used">
@@ -118,8 +136,8 @@
             </ul>
 
             <div class="btn-group">
-              <a class="btn btn-primary" href="https://python-full-stack-django-project-9z.vercel.app/home/" target="_blank" rel="noopener noreferrer">Live app</a>
-              <a class="btn btn-outline" href="https://github.com/vstefan699-ai/FitTrack-Python-Full-Stack-Django-Project" target="_blank" rel="noopener noreferrer">View code</a>
+              <a class="btn btn-primary" href="https://python-full-stack-django-project-9z.vercel.app/home/" target="_blank" rel="noopener noreferrer">Live app<span class="visually-hidden"> (FitTrack Pro, opens in a new tab)</span></a>
+              <a class="btn btn-outline" href="https://github.com/vstefan699-ai/FitTrack-Python-Full-Stack-Django-Project" target="_blank" rel="noopener noreferrer">View code<span class="visually-hidden"> (FitTrack Pro on GitHub, opens in a new tab)</span></a>
             </div>
           </div>
         </article>
@@ -127,17 +145,57 @@
       </div>
     </section>
 
-    <!-- More class projects -->
-    <section class="section section-alt more-projects">
+    <!-- Tutorial-based project with my own security extension -->
+    <section class="section section-alt">
       <div class="container">
-        <h2>More class projects</h2>
-        <p>
-          Tutorials and bootcamp work across the MERN stack, Next.js, GraphQL and more.
-          Every repo is on my GitHub.
-        </p>
-        <div class="btn-group">
-          <a class="btn btn-outline" href="https://github.com/vstefan699-ai?tab=repositories" target="_blank" rel="noopener noreferrer">Browse all repositories</a>
+        <div class="section-heading">
+          <div>
+            <h2>Tutorial-based project</h2>
+            <p>
+              The core app came from a tutorial. The security work below is my own
+              extension of it.
+            </p>
+          </div>
         </div>
+
+        <article class="extension-card">
+          <div class="extension-intro">
+            <span class="badge badge-muted">Tutorial-based · Security extension</span>
+            <h3>Expense Tracker</h3>
+            <p>
+              An income and expense tracker with Google sign-in, where the balance and
+              totals update live. I audited the tutorial app's security and hardened it.
+            </p>
+
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>React</li>
+              <li>JavaScript</li>
+              <li>Firebase Auth</li>
+              <li>Firestore</li>
+              <li>Firebase Hosting</li>
+            </ul>
+
+            <div class="btn-group">
+              <a class="btn btn-primary" href="https://expense-tracker-78e06.web.app" target="_blank" rel="noopener noreferrer">Live app<span class="visually-hidden"> (Expense Tracker, opens in a new tab)</span></a>
+              <a class="btn btn-outline" href="https://github.com/vstefan699-ai/expense-tracker" target="_blank" rel="noopener noreferrer">View code<span class="visually-hidden"> (Expense Tracker on GitHub, opens in a new tab)</span></a>
+            </div>
+          </div>
+
+          <div class="extension-work">
+            <h4>My additions</h4>
+            <ul class="project-highlights">
+              <li>Security audit of the original tutorial code</li>
+              <li>Firestore security rules that limit each user to their own data, verified by Firebase user ID</li>
+              <li>30 automated Firebase Emulator tests covering allowed and blocked access, all passing</li>
+              <li>Replaced editable, browser-stored user IDs with verified Firebase Authentication</li>
+              <li>Improved auth-state handling and fixed a Firestore listener cleanup issue</li>
+              <li>Moved Firebase configuration into environment variables</li>
+            </ul>
+            <p class="extension-note">
+              Done with AI assistance. I reviewed, applied and tested every change.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
